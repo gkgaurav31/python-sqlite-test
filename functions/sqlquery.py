@@ -7,11 +7,11 @@ headers = ['first_name','last_name','address','city','state','zip']
 data_table = pd.read_csv(data_url, header=None, names=headers, converters={'zip': str})
 
 # Clear example.db if it exists
-if os.path.exists('example.db'):
-    os.remove('example.db')
+if os.path.exists('/home/example.db'):
+    os.remove('/home/example.db')
 
 # Create a database
-conn = sqlite3.connect('example.db')
+conn = sqlite3.connect('/home/example.db')
 
 # Add the data to our database
 data_table.to_sql('data_table', conn, dtype={
